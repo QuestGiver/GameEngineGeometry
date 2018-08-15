@@ -38,6 +38,10 @@ public class HandCraftedSphere : MonoBehaviour
                 Verts[i] =  new Vector3(Mathf.Sin(Mathf.PI * m / lat) * Mathf.Cos(2 * Mathf.PI * n / lon),
                             Mathf.Sin(Mathf.PI * m / lat) * Mathf.Sin(2 * Mathf.PI * n / lon),
                             Mathf.Cos(Mathf.PI * m / lat));
+                if (i > 0)
+                {
+                    Debug.Log((Vector3.Distance(Verts[i], Verts[i - 1])) + "vert:" + i.ToString());
+                }
 
                 Instantiate(debugSphere, Verts[i], transform.rotation);
 
