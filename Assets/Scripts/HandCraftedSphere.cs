@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -128,5 +129,13 @@ public class HandCraftedSphere : MonoBehaviour
     void Update()
     {
 
+    }
+
+
+    Vector3[] GetVerts()//old
+    {
+
+
+        return Verts;
     }
 }
