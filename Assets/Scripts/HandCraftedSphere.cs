@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -181,5 +182,13 @@ public class HandCraftedSphere : MonoBehaviour
 
 
         
+    }
+
+
+    Vector3[] GetVerts()//old
+    {
+
+
+        return Verts;
     }
 }
