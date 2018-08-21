@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class HandCraftedSphere : MonoBehaviour
 {
 
-
+    MeshFilter filter;
+    Mesh mesh = new Mesh();
     public int lat;
     public int lon;
 
@@ -15,11 +17,15 @@ public class HandCraftedSphere : MonoBehaviour
     Vector3[] Verts;
     Vector3[] normales;
     Vector2[] uvs;
+
+    public AnimationCurve curve;
+
+
     // Use this for initialization
     void Start()
     {
-        MeshFilter filter = GetComponent<MeshFilter>();
-        Mesh mesh = new Mesh();
+        mesh = new Mesh();
+        filter = GetComponent<MeshFilter>();
         filter.mesh = mesh;
         //If there are M lines of latitude(horizontal) and N lines of longitude(vertical), then put dots at
         //(x, y, z) = (sin(Pi * m / M) * cos(2Pi * n / N), sin(Pi * m / M) * sin(2Pi * n / N), cos(Pi * m / M))
@@ -28,16 +34,17 @@ public class HandCraftedSphere : MonoBehaviour
 
         //edit: maybe adjust M by 1 or 2 as required, because you should decide whether or not to count "latitude lines" at the poles
         #region
-        Verts = new Vector3[(lon + 1) * lat + 2];
+        uvs = new Vector2[(lon + 1) * lat + 1];
+        Verts = new Vector3[(lon + 1) * lat + 1];
         int i = 0;
 
-        for (int m = 0; m < lat; m++)
+        for (int m = 0; m < lat + 1; m++)
         {
             for (int n = 0; n < lon; n++)
             {
-                Verts[i] =  new Vector3(Mathf.Sin(Mathf.PI * m / lat) * Mathf.Cos(2 * Mathf.PI * n / lon),
-                            Mathf.Sin(Mathf.PI * m / lat) * Mathf.Sin(2 * Mathf.PI * n / lon),
-                            Mathf.Cos(Mathf.PI * m / lat));
+                Verts[i] =  new Vector3(Mathf.Sin(Mathf.PI * m / lat) * Mathf.Cos(2 * Mathf.PI * n / lon),//x
+                            Mathf.Sin(Mathf.PI * m / lat) * Mathf.Sin(2 * Mathf.PI * n / lon),//y
+                            Mathf.Cos(Mathf.PI * m / lat));//z
                 if (i > 0)
                 {
                     Debug.Log((Vector3.Distance(Verts[i], Verts[i - 1])) + "vert:" + i.ToString());
@@ -81,40 +88,61 @@ public class HandCraftedSphere : MonoBehaviour
 
         //Top Cap
         int k = 0;
-        for (int n = 0; n < lon; n++)
+        for (int n = 0; n < lon ; n++)
         {
-            triangles[k++] = lon + 2;
-            triangles[k++] = lon + 1;
-            triangles[k++] = 0;
+            if (lon + (1+n) >= (lon * 2))
+            {
+                triangles[k++] = lon - 1;
+                triangles[k++] = lon + n;
+                triangles[k++] = lon;
+            }
+            else
+            {
+                triangles[k++] = lon - 1;                                                                                                           //triangles[k++] = lon + 2;
+                triangles[k++] = lon + n;                                                                       //triangles[k++] = lon + 1;
+                triangles[k++] = lon + (1 + n);                                                                                       //triangles[k++] = 0;
+            }
+
         }
 
         //Middle
-        for (int m = 0; m < lat - 1; m++)
+        for (int m = 1; m < lat; m++)
         {
             for (int n = 0; n < lon; n++)
             {
-                int current = n + m * (lon + 1) + 1;
-                int next = current + n + 1;
+                int current = (lat * m) + n;
+                if ((lon + (1 + n)) >= (lon * 2))
+                {
+                    triangles[k++] = current;
+                    triangles[k++] = (lat * m) + lat + n;
+                    triangles[k++] = lat * (m + 1);
 
-                triangles[k++] = current;
-                triangles[k++] = current + 1;
-                triangles[k++] = next + 1;
 
-                triangles[k++] = current;
-                triangles[k++] = next + 1;
-                triangles[k++] = next;
+                    triangles[k++] = current;
+                    triangles[k++] = (lat * (m + 1));
+                    triangles[k++] = lat * m;
+
+                }
+                else
+                {
+                    triangles[k++] = current;
+                    triangles[k++] = ((lat * m) + n + lat);
+                    triangles[k++] = (((lat * m) + n + lat)) + 1;
+
+
+
+
+                    triangles[k++] = current;
+                    triangles[k++] = (((lat * m) + n + lat)) + 1;
+                    triangles[k++] = ((lat * m) + n + 1);
+
+                }
             }
+
+
         }
 
-        //Bottom Cap
-        for (int n = 0; n < lon; n++)
-        {
-            triangles[i++] = Verts.Length - 1;
-            triangles[i++] = Verts.Length - (lon + 2) - 1;
-            triangles[i++] = Verts.Length - (lon + 1) - 1;
-        }
         #endregion
-
 
         mesh.vertices = Verts;
         mesh.normals = normales;
@@ -124,9 +152,34 @@ public class HandCraftedSphere : MonoBehaviour
         mesh.RecalculateBounds();
     }
 
+
+
+
     // Update is called once per frame
+    float timer = 0;
+    float lifetime = 1;
+
     void Update()
     {
+        if (timer >= lifetime)
+        {
+            timer = 0;
+        }
 
+
+        timer += UnityEngine.Time.deltaTime;
+
+
+
+
+        for (int i = 0; i < Verts.Length; i++)
+        {
+            Verts[i].x *= curve.Evaluate(timer) * Time.deltaTime;
+            Verts[i].y *= curve.Evaluate(timer) * Time.deltaTime;
+            Verts[i].z *= curve.Evaluate(timer) * Time.deltaTime;
+        }
+
+
+        
     }
 }
