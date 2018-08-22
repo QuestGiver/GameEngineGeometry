@@ -270,6 +270,48 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1001 &260237535
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4250145751998394, guid: aa0c75f8e558e0d4ea3e485672103936, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 55.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250145751998394, guid: aa0c75f8e558e0d4ea3e485672103936, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 24.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250145751998394, guid: aa0c75f8e558e0d4ea3e485672103936, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 275.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250145751998394, guid: aa0c75f8e558e0d4ea3e485672103936, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250145751998394, guid: aa0c75f8e558e0d4ea3e485672103936, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250145751998394, guid: aa0c75f8e558e0d4ea3e485672103936, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250145751998394, guid: aa0c75f8e558e0d4ea3e485672103936, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250145751998394, guid: aa0c75f8e558e0d4ea3e485672103936, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: aa0c75f8e558e0d4ea3e485672103936, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1250924306
 GameObject:
   m_ObjectHideFlags: 0
