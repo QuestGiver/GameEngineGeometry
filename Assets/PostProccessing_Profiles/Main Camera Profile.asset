@@ -46,7 +46,7 @@ MonoBehaviour:
     value: 1.25
   softKnee:
     overrideState: 1
-    value: 0.191
+    value: 1
   clamp:
     overrideState: 1
     value: 65472
@@ -55,7 +55,7 @@ MonoBehaviour:
     value: 10
   anamorphicRatio:
     overrideState: 1
-    value: 0
+    value: 1
   color:
     overrideState: 1
     value: {r: 1, g: 0, b: 0, a: 1}
@@ -68,7 +68,7 @@ MonoBehaviour:
     defaultState: 1
   dirtIntensity:
     overrideState: 1
-    value: 1.75
+    value: 0.8
 --- !u!114 &114254799525272466
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -134,7 +134,7 @@ MonoBehaviour:
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 12.729265, y: 57.72928}
+    value: {x: 12.344952, y: 42.35673}
   minLuminance:
     overrideState: 1
     value: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
     value: 0
   speedUp:
     overrideState: 1
-    value: 3.5
+    value: 3.27
   speedDown:
     overrideState: 1
     value: 1.12
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -174,7 +174,7 @@ MonoBehaviour:
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0.115
+    value: 0
   fastMode:
     overrideState: 1
     value: 0
@@ -240,13 +240,13 @@ MonoBehaviour:
     value: 8
   maximumMarchDistance:
     overrideState: 1
-    value: 99.55
+    value: 99.19
   distanceFade:
     overrideState: 1
-    value: 0.633
+    value: 0.717
   vignette:
     overrideState: 0
-    value: 0.5
+    value: 0.564
 --- !u!114 &114601621418709900
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -267,7 +267,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.16
+    value: 0.66
   color:
     overrideState: 1
     value: {r: 1, g: 0, b: 0, a: 1}
@@ -285,7 +285,7 @@ MonoBehaviour:
     value: -12
   thicknessModifier:
     overrideState: 1
-    value: 2.45
+    value: 1.34
   directLightingStrength:
     overrideState: 0
     value: 0
