@@ -40,10 +40,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.8
+    value: 1.18
   threshold:
     overrideState: 1
-    value: 1.25
+    value: 1.08
   softKnee:
     overrideState: 1
     value: 1
@@ -63,12 +63,12 @@ MonoBehaviour:
     overrideState: 1
     value: 0
   dirtTexture:
-    overrideState: 1
-    value: {fileID: 2800000, guid: 5f51e0b22aa8cb84b9f422576ce87ff9, type: 3}
+    overrideState: 0
+    value: {fileID: 8600000, guid: f58de6cf1b7833f46acced05e4e1a0ba, type: 2}
     defaultState: 1
   dirtIntensity:
     overrideState: 1
-    value: 0.8
+    value: 0.17
 --- !u!114 &114254799525272466
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -164,17 +164,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
   spectralLut:
     overrideState: 1
-    value: {fileID: 2800000, guid: 227c4539983b317449c83458d2c56bae, type: 3}
+    value: {fileID: 8600000, guid: f58de6cf1b7833f46acced05e4e1a0ba, type: 2}
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0
+    value: 0.11
   fastMode:
     overrideState: 1
     value: 0
