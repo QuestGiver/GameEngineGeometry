@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a304ef75fa4dd4b883232a4fb84fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lat: 100
-  lon: 100
+  lat: 50
+  lon: 50
   debugSphere: {fileID: 1588464956}
   curve:
     serializedVersion: 2

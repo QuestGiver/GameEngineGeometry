@@ -154,31 +154,9 @@ public class HandCraftedSphere : MonoBehaviour
     }
 
 
-
-
-    // Update is called once per frame
-    float timer = 0;
-    float lifetime = 1;
-
     void Update()
     {
-        if (timer >= lifetime)
-        {
-            timer = 0;
-        }
 
-
-        timer += UnityEngine.Time.deltaTime;
-
-
-
-
-        for (int i = 0; i < Verts.Length; i++)
-        {
-            Verts[i].x *= curve.Evaluate(timer) * Time.deltaTime;
-            Verts[i].y *= curve.Evaluate(timer) * Time.deltaTime;
-            Verts[i].z *= curve.Evaluate(timer) * Time.deltaTime;
-        }
 
 
         
