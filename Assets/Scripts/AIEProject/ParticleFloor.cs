@@ -27,6 +27,7 @@ public class ParticleFloor : MonoBehaviour
         //ParticleSystem.EmitParams emitParams;
         //emitParams.position
         ParticleSystem.EmissionModule emission = particleSystem.emission;
+        //Mathf.PerlinNoise
         //emission.rateOverTime = 
     }
 
