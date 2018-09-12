@@ -83,7 +83,7 @@ Material:
     - _NormalLerp: 0.587
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Radius: 11.2
+    - _Radius: -30.2
     - _ScrollSpeed: 0.07
     - _ScrollSpeed2: 0.13
     - _SmoothnessTextureChannel: 0
@@ -96,4 +96,4 @@ Material:
     m_Colors:
     - _Color: {r: 0, g: 0.19607878, b: 1, a: 0.30588236}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _VectorPos: {r: 31.22, g: 20.9, b: -100.06, a: 0}
+    - _VectorPos: {r: 31.1, g: 23.48, b: -98.6, a: 0}
