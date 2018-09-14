@@ -91,7 +91,7 @@ public class ParticleFloor : MonoBehaviour
         yOrg += Time.deltaTime * scrollSpeed;
 
 
-        //int width = (int) Mathf.Sqrt(particles.Length);
+        //int width = (int)Mathf.Sqrt(particles.Length);
 
 
 
@@ -109,7 +109,7 @@ public class ParticleFloor : MonoBehaviour
 
         }
 
-        //StartCoroutine(Grey());
+
         particleSystem.SetParticles(particles, numParticlesAlive);
     }
 

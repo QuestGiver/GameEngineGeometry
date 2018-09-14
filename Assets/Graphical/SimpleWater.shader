@@ -17,6 +17,8 @@
 		_ScrollSpeed2("Normal Scroll Speed 2", float) = 0.1
 		_NormalLerp("Normal Lerp Val", Range(0, 1)) = 0
 		_VectorPos("Vector Position", vector) = (0,0,0,0)
+			[HideInInspector]
+		_VertexArray("VertexArray", vector) = (0,0,0)
 		//_WorldPos("World Position", vector) = (0,0,0,0)
 		_Radius("Radius",float) = 5
 	}
@@ -32,6 +34,7 @@
 			#pragma target 3.0
 			float _Radius;
 			float4 _VectorPos;
+			float3 _VectorArray;//the key to living particles
 			float _NormalLerp;
 			sampler2D _NormalMap;
 			sampler2D _NormalMap2;
